@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701462362
+::res://::1701955312
 icon.svg::CompressedTexture2D::6668291325609606540::1701361143::1701361151::1::::<><>::
+README.md::TextFile::-1::1701918309::0::1::::<><>::
 ::res://framework/::1701373003
 ::res://framework/res/::1701373544
 cfg_test.json::JSON::-1::1701373544::0::1::::<><>::
@@ -10,9 +11,11 @@ utils.gd::GDScript::-1::1701371476::0::1::::<>Object<>::
 ::res://framework/src/mechanical_motion/::1701389563
 ::res://prototypes/::1701462394
 ::res://prototypes/res/::1701462380
-::res://prototypes/scn/::1701462389
-articulated_arm.tscn::PackedScene::3588626185183924231::1701462428::0::1::::<><>::
-::res://prototypes/src/::1701462394
+::res://prototypes/scn/::1701955316
+prototype_articulated_arm.tscn::PackedScene::3588626185183924231::1701955316::0::1::::<><>::res://prototypes/src/prototype_articulated_arm.gd<>res://prototypes/src/protoype_axis.gd
+::res://prototypes/src/::1701955312
+prototype_articulated_arm.gd::GDScript::-1::1701462862::0::1::::<>Node3D<>::
+protoype_axis.gd::GDScript::-1::1701464380::0::1::::<>Node3D<>::
 ::res://sandbox/::1701389027
 ::res://sandbox/res/::1701389164
 ::res://sandbox/res/material/::1701389164
