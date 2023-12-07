@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bremfcg6p6t8r"]
+
+[ext_resource type="Script" path="res://prototypes/src/prototype_articulated_arm.gd" id="1_f8ph8"]
+[ext_resource type="Script" path="res://prototypes/scn/protoype_axis.gd" id="2_x46a3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3nb7a"]
+size = Vector3(1, 3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jlbsg"]
+size = Vector3(0.6, 2, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6d7kv"]
+
+[node name="vehicle" type="Node3D"]
+script = ExtResource("1_f8ph8")
+
+[node name="root_axis" type="Node3D" parent="."]
+script = ExtResource("2_x46a3")
+initial_angle = 10.0
+
+[node name="main_trunk" type="MeshInstance3D" parent="root_axis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_3nb7a")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="trunk_axis" type="Node3D" parent="root_axis/main_trunk"]
+transform = Transform3D(1, 0.000733168, -0.000226409, -0.000733161, 1, 3.07854e-05, 0.000226432, -3.06176e-05, 1, 0, 1.5, 0)
+script = ExtResource("2_x46a3")
+
+[node name="branch_01" type="MeshInstance3D" parent="root_axis/main_trunk/trunk_axis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_jlbsg")
+metadata/_edit_lock_ = true
+
+[node name="branch_axis" type="Node3D" parent="root_axis/main_trunk/trunk_axis/branch_01"]
+transform = Transform3D(1, -6.08225e-12, 0, -6.49081e-12, 1, 0, 2.91038e-11, -7.27596e-12, 1, 2.32831e-10, 1, 1.45519e-11)
+script = ExtResource("2_x46a3")
+initial_angle = 15.0
+
+[node name="claw" type="MeshInstance3D" parent="root_axis/main_trunk/trunk_axis/branch_01/branch_axis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_6d7kv")
+metadata/_edit_lock_ = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.798678, 0, 0.601759, 0, 1, 0, -0.601759, 0, 0.798678, 5.27931, 3.23111, 7.44397)
+current = true
+fov = 71.1
+near = 0.059
+far = 554.74
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.493836, 0.673368, -0.550184, 0, 0.632719, 0.774382, 0.869555, -0.382417, 0.312459, -2.37447, 0, 4.76477)
